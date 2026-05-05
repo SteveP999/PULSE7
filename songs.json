@@ -7,7 +7,7 @@
     "album": "Endless Echo",
     "type": "Latest Single",
     "isLatest": true,
-    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-two-nights-cover.png",
+    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/covers/pulse7-two-nights-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/2wioc1edj01haev6ifjkl/Two-Nights-PULSE7.mp3?rlkey=dwogp86reax5amxrh30bphoay&raw=1"
   },
   {
@@ -18,7 +18,7 @@
     "album": "Endless Echo",
     "type": "Single",
     "isLatest": false,
-    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-we-dont-miss-cover.png",
+    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/covers/pulse7-we-dont-miss-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/ebabtss62r3ykf9p2f7s2/We-Don-t-Miss-Mastered-MP3.mp3?rlkey=b0vf9u40fw7guqel1c1ztu460&raw=1"
   },
   {
@@ -29,7 +29,7 @@
     "album": "Endless Echo",
     "type": "Single",
     "isLatest": false,
-    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-signal-locked-cover.png",
+    "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/covers/pulse7-signal-locked-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1"
   }
 ]
