@@ -4,319 +4,224 @@
 <meta charset="UTF-8">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PCFSEQJZ1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4PCFSEQJZ1');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4PCFSEQJZ1');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PULSE7 — K-Pop · Electronic · Global Sound</title>
+<title>PULSE7 — Endless Echo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --black:#020106; --ink:#080412; --deep:#0C0618; --mid:#10081E;
-  --pink:#FF2D78; --pink-lt:#FF6EA0; --pink-glow:rgba(255,45,120,0.22);
-  --cyan:#00C8FF; --cyan-lt:#60DFFF; --cyan-glow:rgba(0,200,255,0.18);
-  --pearl:#D8D0F0; --silver:#8878A8; --white:#F0EAFF; --mist:#4A3870;
-  --accent:#FF2D78; --accent-lt:#FF6EA0; --accent-glow:rgba(255,45,120,0.25);
-}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--pearl);font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden;}
-#topnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:transparent;border-bottom:1px solid transparent;transition:background 0.4s,border-color 0.4s;}
-#topnav.scrolled{background:rgba(2,1,6,0.96);border-color:var(--pink-glow);backdrop-filter:blur(12px);}
-.nav-logo{height:36px;width:auto;mix-blend-mode:screen;filter:brightness(1.5);}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:var(--mist);text-decoration:none;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover{color:var(--pink-lt);}
-.hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;filter:brightness(0.35);}
-.hero-vignette{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,1,6,0.5) 0%,rgba(2,1,6,0) 35%,rgba(2,1,6,0.85) 72%,rgba(2,1,6,0.99) 100%),linear-gradient(to right,rgba(2,1,6,0.7) 0%,transparent 55%);}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 75% 40%,rgba(255,45,120,0.12) 0%,transparent 60%),radial-gradient(ellipse 30% 25% at 25% 60%,rgba(0,200,255,0.08) 0%,transparent 50%);}
-.hero-content{position:relative;z-index:2;padding:0 3.5rem 5rem;max-width:580px;}
-.hero-logo-wrap{margin-bottom:1.5rem;}
-.hero-logo-wrap img{height:60px;width:auto;mix-blend-mode:screen;filter:brightness(1.5);}
-.hero-label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:0.9rem;}
-.hero-tagline{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);font-weight:500;color:var(--white);opacity:0.85;margin-bottom:2rem;line-height:1.55;}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
-.cta-primary{background:var(--accent);color:var(--white);border:none;padding:0.8rem 2rem;font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.15s;box-shadow:0 0 20px var(--pink-glow);}
-.cta-primary:hover{background:var(--pink-lt);transform:translateY(-1px);}
-.cta-secondary{background:transparent;color:var(--pearl);border:1px solid rgba(255,45,120,0.4);padding:0.8rem 2rem;text-decoration:none;display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
-.cta-secondary:hover{border-color:var(--pink);color:var(--pink-lt);}
-.section-header{text-align:center;padding:5rem 2rem 3.5rem;}
-.section-eyebrow{font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
-.section-title{font-family:'Space Mono',monospace;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:0.04em;}
-.pink-rule{width:44px;height:2px;background:linear-gradient(to right,var(--accent),var(--cyan));margin:1rem auto 0;opacity:0.8;}
-#bio{background:var(--ink);padding-bottom:5rem;}
-.bio-inner{max-width:660px;margin:0 auto;padding:0 2rem;text-align:center;}
-.bio-inner p{color:var(--silver);line-height:1.95;font-size:0.95rem;margin-bottom:1.2rem;}
-#latest-single{background:var(--deep);padding:5rem 0;border-top:1px solid var(--pink-glow);}
-.latest-inner{max-width:1060px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:380px 1fr;gap:4.5rem;align-items:center;}
-.latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 60px var(--accent-glow),0 24px 64px rgba(0,0,0,0.9);}
-.latest-badge{display:inline-block;font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,45,120,0.4);padding:0.25rem 0.85rem;margin-bottom:1.2rem;}
-.latest-title{font-family:'Space Mono',monospace;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:0.4rem;}
-.latest-sub{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist);margin-bottom:2rem;}
-.latest-play-btn{display:inline-flex;align-items:center;gap:0.75rem;background:transparent;color:var(--accent);border:1px solid rgba(255,45,120,0.5);cursor:pointer;padding:0.85rem 2rem;font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;transition:border-color 0.2s,background 0.2s,box-shadow 0.2s;}
-.latest-play-btn:hover{background:var(--accent-glow);box-shadow:0 0 20px var(--pink-glow);}
-.album-section{padding:5rem 0;border-top:1px solid var(--pink-glow);background:var(--mid);}
-.album-layout{max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:340px 1fr;gap:4rem;align-items:start;}
-.album-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;box-shadow:0 0 50px var(--pink-glow),0 20px 60px rgba(0,0,0,0.85);}
-.album-badge{display:inline-block;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,45,120,0.4);padding:0.25rem 0.75rem;margin-bottom:1.2rem;}
-.album-title{font-family:'Space Mono',monospace;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:0.4rem;}
-.album-artist{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mist);margin-bottom:2rem;}
-.tracklist{border-top:1px solid rgba(255,45,120,0.12);}
-.track-row{display:grid;grid-template-columns:2rem 1fr auto auto;align-items:center;gap:0.75rem;padding:0.8rem 0;border-bottom:1px solid rgba(255,45,120,0.07);transition:background 0.2s;}
-.track-row:hover{background:rgba(255,45,120,0.05);}
-.track-num{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--mist);opacity:0.4;text-align:right;}
-.track-title{font-size:0.9rem;color:var(--pearl);}
-.track-badge{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.55rem;color:var(--accent);border:1px solid rgba(255,45,120,0.38);}
-.track-play-btn{background:transparent;border:1px solid rgba(255,45,120,0.3);color:var(--accent);width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.6rem;flex-shrink:0;transition:background 0.2s,border-color 0.2s;}
-.track-play-btn:hover{background:rgba(255,45,120,0.15);border-color:var(--pink);}
-.track-play-btn.playing{background:rgba(255,45,120,0.2);border-color:var(--pink-lt);}
-#singles{background:var(--ink);padding:5rem 0;border-top:1px solid var(--pink-glow);}
-.singles-grid{max-width:1040px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;}
-.single-card{cursor:pointer;}
-.single-img-wrap{position:relative;overflow:hidden;aspect-ratio:1;}
-.single-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.45s,filter 0.4s;filter:brightness(0.72);}
-.single-card:hover .single-img-wrap img{transform:scale(1.04);filter:brightness(1);}
-.single-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,1,6,0);transition:background 0.3s;}
-.single-card:hover .single-overlay{background:rgba(2,1,6,0.35);}
-.single-play-btn{width:52px;height:52px;border:2px solid var(--pink);background:rgba(2,1,6,0.6);color:var(--pink);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:scale(0.85);transition:opacity 0.25s,transform 0.25s;}
-.single-card:hover .single-play-btn,.single-play-btn.playing{opacity:1;transform:scale(1);}
-.single-info{padding:0.85rem 0 0;}
-.single-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.2rem;}
-.single-sub{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);opacity:0.65;}
-.single-badge{display:inline-block;font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,45,120,0.4);padding:0.12rem 0.45rem;margin-left:0.4rem;vertical-align:middle;}
-#player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(2,1,6,0.97);border-top:1px solid rgba(255,45,120,0.25);backdrop-filter:blur(16px);grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:0.8rem 2rem;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);}
-#player.visible{transform:translateY(0);}
-.p-info{display:flex;align-items:center;gap:1rem;min-width:0;}
-.p-thumb{width:42px;height:42px;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,45,120,0.3);}
-.p-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.p-sub{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mist);opacity:0.55;}
-.p-controls{display:flex;align-items:center;flex-direction:column;flex:1;gap:0.5rem;min-width:0;}
-.p-btn-row{display:flex;align-items:center;gap:1.2rem;}
-.p-btn{background:transparent;border:none;color:var(--mist);cursor:pointer;font-size:0.9rem;padding:0.25rem;transition:color 0.2s;}
-.p-btn:hover{color:var(--pink-lt);}
-#p-playbtn{width:36px;height:36px;border:1px solid rgba(255,45,120,0.5);background:transparent;color:var(--accent);cursor:pointer;font-size:0.8rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
-#p-playbtn:hover{background:rgba(255,45,120,0.18);}
-.p-progress{display:flex;align-items:center;gap:0.75rem;width:100%;}
-.p-time{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mist);opacity:0.55;white-space:nowrap;}
-#p-bar{flex:1;height:3px;background:rgba(255,45,120,0.15);cursor:pointer;position:relative;}
-#p-fill{height:100%;width:0%;background:linear-gradient(to right,var(--accent),var(--cyan));pointer-events:none;}
-.p-right{display:flex;align-items:center;gap:1rem;}
-#p-vol{width:72px;accent-color:var(--accent);}
-#p-close{background:transparent;border:none;color:var(--mist);cursor:pointer;font-size:1rem;opacity:0.5;transition:opacity 0.2s;}
-#p-close:hover{opacity:1;}
-footer{background:var(--black);border-top:1px solid var(--pink-glow);padding:4rem 2rem 3rem;text-align:center;}
-.foot-logo{height:44px;width:auto;mix-blend-mode:screen;filter:brightness(1.5);margin-bottom:1.2rem;}
-.foot-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--mist);opacity:0.4;margin-bottom:1.5rem;}
-.foot-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
-.foot-links a{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);text-decoration:none;opacity:0.4;transition:opacity 0.2s,color 0.2s;}
-.foot-links a:hover{opacity:1;color:var(--pink-lt);}
-.loading-ph{text-align:center;padding:3rem;color:var(--mist);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;}
-@media(max-width:768px){
-  .album-layout{grid-template-columns:1fr;gap:2rem;}
-  .album-cover{max-width:300px;margin:0 auto;}
-  .latest-inner{grid-template-columns:1fr!important;gap:2rem;}
-  .hero-content{padding:0 1.8rem 3.5rem;}
-  .singles-grid{grid-template-columns:1fr;gap:1rem;}
-  #player{grid-template-columns:1fr;gap:0.5rem;}
-  .p-info{display:none;}
-}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#020106;--ink:#080412;--deep:#0C0618;--mid:#10081E;--pink:#FF2D78;--cyan:#00C8FF;--pearl:#D8D0F0;--silver:#8878A8;--white:#F0EAFF;--mist:#4A3870}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--pearl);font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
+#topnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:rgba(2,1,6,.9);border-bottom:1px solid rgba(255,45,120,.18);backdrop-filter:blur(12px)}
+.nav-logo{height:36px;width:auto;filter:brightness(1.4)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--silver);text-decoration:none;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+.nav-links a:hover{color:var(--pink)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/artist/pulse7-photo.png') center/cover no-repeat;filter:brightness(.35)}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,1,6,.35),rgba(2,1,6,.98)),radial-gradient(circle at 70% 45%,rgba(255,45,120,.18),transparent 45%)}
+.hero-content{position:relative;z-index:2;padding:0 3.5rem 5rem;max-width:650px}
+.hero-logo{height:64px;width:auto;margin-bottom:1.4rem;filter:brightness(1.5)}
+.eyebrow{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);margin-bottom:.9rem}
+.hero h1{font-family:'Space Mono',monospace;font-size:clamp(2rem,6vw,4.5rem);line-height:1;color:var(--white);margin-bottom:1rem}
+.hero p{font-size:clamp(1rem,2vw,1.35rem);color:var(--pearl);margin-bottom:2rem}
+.btn{background:var(--pink);color:var(--white);border:0;padding:.85rem 1.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;margin-right:.75rem}
+.btn.secondary{background:transparent;border:1px solid rgba(255,45,120,.5)}
+.section-header{text-align:center;padding:5rem 2rem 3rem}
+.section-title{font-family:'Space Mono',monospace;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white)}
+.rule{width:48px;height:2px;background:linear-gradient(90deg,var(--pink),var(--cyan));margin:1rem auto 0}
+#bio{background:var(--ink);padding-bottom:5rem}
+.bio-inner{max-width:720px;margin:0 auto;text-align:center;padding:0 2rem;color:var(--silver)}
+#latest-single,#latest-video,.album-section{border-top:1px solid rgba(255,45,120,.18);padding:5rem 0;background:var(--deep)}
+.latest-inner,.album-layout{max-width:1060px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:start}
+.cover,.album-cover{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:0 0 55px rgba(255,45,120,.22),0 22px 60px rgba(0,0,0,.85)}
+.latest-title,.album-title{font-family:'Space Mono',monospace;font-size:clamp(1.7rem,3.5vw,2.7rem);color:var(--white);line-height:1.1;margin-bottom:.7rem}
+.meta{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);margin-bottom:1.5rem}
+.video-placeholder{max-width:900px;margin:0 auto;padding:4rem 2rem;border:1px solid rgba(255,45,120,.25);background:rgba(255,45,120,.05);text-align:center;color:var(--silver)}
+.video-placeholder strong{display:block;color:var(--white);font-family:'Space Mono',monospace;font-size:1.4rem;margin-bottom:.5rem}
+.tracklist{border-top:1px solid rgba(255,45,120,.12)}
+.track-row{display:grid;grid-template-columns:2rem 1fr auto auto;gap:.75rem;align-items:center;padding:.85rem 0;border-bottom:1px solid rgba(255,45,120,.08)}
+.track-num{font-family:'Space Mono',monospace;color:var(--mist);opacity:.55;text-align:right}
+.track-title{color:var(--pearl)}
+.track-play,.video-btn{background:transparent;border:1px solid rgba(255,45,120,.45);color:var(--pink);padding:.35rem .6rem;cursor:pointer;text-decoration:none;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase}
+.track-play.playing{background:rgba(255,45,120,.18)}
+.album-tracks-title{font-family:'Space Mono',monospace;color:var(--white);font-size:1.2rem;margin:2.5rem 0 1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.song-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.song-card h4{color:var(--white);font-size:.95rem;margin-top:.65rem}
+.song-card p{color:var(--mist);font-size:.72rem}
+#player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(2,1,6,.97);border-top:1px solid rgba(255,45,120,.3);padding:.8rem 1.5rem;align-items:center;gap:1rem}
+#player.visible{display:flex}
+#p-thumb{width:44px;height:44px;object-fit:cover}
+#p-title{color:var(--white);font-weight:700}
+#p-playbtn,#p-close{background:transparent;border:1px solid rgba(255,45,120,.45);color:var(--pink);padding:.4rem .7rem;cursor:pointer}
+footer{padding:4rem 2rem;text-align:center;background:var(--black);border-top:1px solid rgba(255,45,120,.18)}
+.foot-logo{height:44px}
+@media(max-width:768px){.latest-inner,.album-layout{grid-template-columns:1fr}.nav-links{gap:1rem}.hero-content{padding:0 1.5rem 4rem}}
 </style>
 </head>
 <body>
 <nav id="topnav">
-  <img class="nav-logo" src="https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-logo.png" alt="PULSE7">
-  <ul class="nav-links">
-    <li><a href="#bio">About</a></li>
-    <li><a href="#albums">Music</a></li>
-    <li><a href="#singles">Singles</a></li>
-    <li><a href="https://pulse7.hellotexasrecords.com" target="_blank" style="opacity:0.45;font-size:0.62rem;">Hello Texas Records</a></li>
-  </ul>
+<img class="nav-logo" src="images/logos/pulse7-logo.png" alt="PULSE7">
+<ul class="nav-links">
+<li><a href="#bio">About</a></li>
+<li><a href="#latest-video">Video</a></li>
+<li><a href="#albums">Music</a></li>
+<li><a href="https://stevep999.github.io/hello-texas-records/" target="_blank">Label</a></li>
+</ul>
 </nav>
+
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-photo.png');"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-label">Hello Texas Records</div>
-    <div class="hero-logo-wrap">
-      <img src="https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-logo.png" alt="PULSE7">
-    </div>
-    <p class="hero-tagline">Signal locked.<br>Frequency found.</p>
-    <div class="hero-ctas">
-      <button class="cta-primary" id="hero-play-btn">&#9654;&nbsp; Play Latest Single</button>
-      <a href="#albums" class="cta-secondary">Discography</a>
-    </div>
-  </div>
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="eyebrow">Hello Texas Records</div>
+<img class="hero-logo" src="images/logos/pulse7-logo.png" alt="PULSE7">
+<h1>Endless Echo</h1>
+<p>Signal locked. Frequency found.</p>
+<button class="btn" id="hero-play-btn">▶ Play Latest Single</button>
+<a class="btn secondary" href="#albums">Discography</a>
+</div>
 </section>
+
 <section id="bio">
-  <div class="section-header">
-    <div class="section-eyebrow">About</div>
-    <h2 class="section-title">PULSE7</h2>
-    <div class="pink-rule"></div>
-  </div>
-  <div class="bio-inner">
-    <p>PULSE7 is a seven-member K-Pop and electronic pop group with a global sound — precision choreography, cinematic production, and hooks engineered to hit from the first beat.</p>
-    <p>Debut album <em>Endless Echo</em> arrives fully formed: electric, pulsing, nocturnal. A signal that never drops. Released through Hello Texas Records.</p>
-  </div>
+<div class="section-header"><div class="eyebrow">About</div><h2 class="section-title">PULSE7</h2><div class="rule"></div></div>
+<div class="bio-inner">
+<p>PULSE7 is a seven-member K-pop and electronic pop group with a global sound: precision choreography, cinematic production, and hooks engineered to hit from the first beat.</p>
+<p>Debut album <em>Endless Echo</em> arrives electric, pulsing, and nocturnal. Released through Hello Texas Records.</p>
+</div>
 </section>
+
 <section id="latest-single">
-  <div class="section-header">
-    <div class="section-eyebrow">Latest Single</div>
-    <h2 class="section-title" id="latest-section-title">Loading…</h2>
-    <div class="pink-rule"></div>
-  </div>
-  <div class="latest-inner">
-    <div><img id="latest-cover" src="" alt="" class="latest-cover"></div>
-    <div>
-      <div class="latest-badge">Latest Single</div>
-      <h2 class="latest-title" id="latest-title">—</h2>
-      <div class="latest-sub" id="latest-sub">PULSE7</div>
-      <button class="latest-play-btn" id="latest-play-btn">&#9654;&nbsp; Play Now</button>
-    </div>
-  </div>
+<div class="section-header"><div class="eyebrow">Latest Single</div><h2 class="section-title" id="latest-section-title">Two Nights</h2><div class="rule"></div></div>
+<div class="latest-inner">
+<img id="latest-cover" class="cover" src="images/covers/pulse7-two-nights-cover.png" alt="Two Nights">
+<div>
+<h2 class="latest-title" id="latest-title">Two Nights</h2>
+<div class="meta" id="latest-sub">PULSE7 · Endless Echo</div>
+<button class="btn" id="latest-play-btn">▶ Play Now</button>
+</div>
+</div>
 </section>
-<div id="albums"><div class="loading-ph" id="albums-loading">Loading music…</div></div>
-<section id="singles">
-  <div class="section-header">
-    <div class="section-eyebrow">Singles</div>
-    <h2 class="section-title">All Tracks</h2>
-    <div class="pink-rule"></div>
-  </div>
-  <div class="singles-grid" id="singles-grid"><div class="loading-ph">Loading…</div></div>
+
+<section id="latest-video">
+<div class="section-header"><div class="eyebrow">Latest Video</div><h2 class="section-title">Video Coming Soon</h2><div class="rule"></div></div>
+<div class="video-placeholder">
+<strong>Video Coming Soon</strong>
+<span>PULSE7 does not have a video assigned yet. The video system is installed and ready.</span>
+</div>
 </section>
+
+<div id="albums"></div>
+
 <footer>
-  <img src="https://raw.githubusercontent.com/SteveP999/pulse7/main/pulse7-logo.png" alt="PULSE7" class="foot-logo">
-  <div class="foot-label">Hello Texas Records</div>
-  <div class="foot-links">
-    <a href="#" target="_blank">Spotify</a>
-    <a href="#" target="_blank">Apple Music</a>
-    <a href="#" target="_blank">YouTube</a>
-    <a href="#" target="_blank">Instagram</a>
-    <a href="https://pulse7.hellotexasrecords.com" target="_blank">Label</a>
-  </div>
+<img src="images/logos/pulse7-logo.png" alt="PULSE7" class="foot-logo">
+<div class="meta">Hello Texas Records</div>
 </footer>
+
 <audio id="audio" playsinline preload="none"></audio>
 <div id="player">
-  <div class="p-info">
-    <img id="p-thumb" src="" alt="" class="p-thumb">
-    <div><div id="p-title" class="p-title">—</div><div id="p-sub" class="p-sub">PULSE7</div></div>
-  </div>
-  <div class="p-controls">
-    <div class="p-btn-row">
-      <button class="p-btn" id="p-prev">&#9664;&#9664;</button>
-      <button id="p-playbtn">&#9654;</button>
-      <button class="p-btn" id="p-next">&#9654;&#9654;</button>
-    </div>
-    <div class="p-progress">
-      <span class="p-time" id="p-cur">0:00</span>
-      <div id="p-bar"><div id="p-fill"></div></div>
-      <span class="p-time" id="p-dur">0:00</span>
-    </div>
-  </div>
-  <div class="p-right">
-    <input type="range" id="p-vol" min="0" max="1" step="0.02" value="0.85">
-    <button id="p-close">&#x2715;</button>
-  </div>
+<img id="p-thumb" src="" alt="">
+<div style="flex:1"><div id="p-title">—</div><div class="meta" id="p-sub">PULSE7</div></div>
+<button id="p-playbtn">▶</button>
+<button id="p-close">×</button>
 </div>
+
 <script>
-const ARTIST='PULSE7',REPO='pulse7';
-const BASE=`https://raw.githubusercontent.com/SteveP999/${REPO}/main`;
-const SONGS_URL=`${BASE}/songs.json`,LATEST_URL=`${BASE}/latest.json`;
-let SONGS=[],ORDER=[],cur=null;
-const audio=document.getElementById('audio'),player=document.getElementById('player'),pThumb=document.getElementById('p-thumb');
-function fmt(s){if(!isFinite(s)||isNaN(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-function getSong(id){return SONGS.find(s=>s.id===id);}
-function setAllBtns(id,playing){
-  document.querySelectorAll('[data-play-id]').forEach(btn=>{
-    btn.innerHTML=(playing&&btn.dataset.playId===id)?'&#9646;&#9646;':'&#9654;';
-    btn.classList.toggle('playing',playing&&btn.dataset.playId===id);
-  });
-  document.getElementById('p-playbtn').innerHTML=playing?'&#9646;&#9646;':'&#9654;';
+let SONGS=[],cur=null;
+const audio=document.getElementById('audio'),player=document.getElementById('player');
+
+function getSong(id){return SONGS.find(s=>s.id===id)}
+function setButtons(id,playing){
+document.querySelectorAll('[data-play-id]').forEach(b=>{
+b.textContent=(playing && b.dataset.playId===id)?'Pause':'Play';
+b.classList.toggle('playing',playing && b.dataset.playId===id);
+});
+document.getElementById('p-playbtn').textContent=playing?'Pause':'▶';
 }
 function playById(id){
-  const song=getSong(id);if(!song||!song.audio)return;
-  if(cur===id){if(audio.paused){audio.play().catch(()=>{});setAllBtns(id,true);}else{audio.pause();setAllBtns(id,false);}return;}
-  cur=id;
-  gtag('event','song_play',{artist:ARTIST,song_title:song.title,album:song.album,player_type:'artist_site'});
-  audio.removeAttribute('crossorigin');audio.src=song.audio;
-  document.getElementById('p-title').textContent=song.title;
-  document.getElementById('p-sub').textContent=song.album||ARTIST;
-  if(song.cover)pThumb.src=song.cover;
-  player.style.display='grid';setTimeout(()=>player.classList.add('visible'),10);
-  setAllBtns(id,true);audio.load();
-  const pp=audio.play();if(pp)pp.catch(()=>{audio.addEventListener('canplaythrough',function h(){audio.removeEventListener('canplaythrough',h);audio.play().catch(()=>{});});});
+const song=getSong(id); if(!song || !song.audio)return;
+if(cur===id){
+ if(audio.paused){audio.play().catch(()=>{});setButtons(id,true)}
+ else{audio.pause();setButtons(id,false)}
+ return;
 }
-audio.addEventListener('ended',()=>{if(!cur||!ORDER.length)return;const idx=ORDER.indexOf(cur);playById(ORDER[(idx+1)%ORDER.length]);});
-audio.addEventListener('timeupdate',()=>{const pct=audio.duration?(audio.currentTime/audio.duration)*100:0;document.getElementById('p-fill').style.width=pct+'%';document.getElementById('p-cur').textContent=fmt(audio.currentTime);document.getElementById('p-dur').textContent=fmt(audio.duration);});
-document.getElementById('p-playbtn').addEventListener('click',()=>{if(!cur)return;if(audio.paused){audio.play().catch(()=>{});setAllBtns(cur,true);}else{audio.pause();setAllBtns(cur,false);}});
-document.getElementById('p-prev').addEventListener('click',()=>{if(!cur||!ORDER.length)return;if(audio.currentTime>3){audio.currentTime=0;return;}const idx=ORDER.indexOf(cur);playById(ORDER[(idx-1+ORDER.length)%ORDER.length]);});
-document.getElementById('p-next').addEventListener('click',()=>{if(!cur||!ORDER.length)return;const idx=ORDER.indexOf(cur);playById(ORDER[(idx+1)%ORDER.length]);});
-document.getElementById('p-bar').addEventListener('click',e=>{if(!audio.duration)return;const r=e.currentTarget.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;});
-document.getElementById('p-vol').addEventListener('input',e=>{audio.volume=+e.target.value;});
-document.getElementById('p-close').addEventListener('click',()=>{audio.pause();player.classList.remove('visible');setTimeout(()=>{player.style.display='none';},350);setAllBtns(cur,false);cur=null;});
-function buildAlbums(songs){
-  const map=new Map();songs.forEach(s=>{if(!map.has(s.album))map.set(s.album,[]);map.get(s.album).push(s);});
-  const container=document.getElementById('albums');container.innerHTML='';
-  let i=0;map.forEach((tracks,name)=>{
-    const cover=tracks[0].albumCover||tracks[0].cover;
-    const sec=document.createElement('section');sec.className='album-section';
-    sec.innerHTML=`<div class="album-layout">
-      <div><img src="${cover}" alt="${name}" class="album-cover"></div>
-      <div style="padding-top:0.5rem;">
-        <div class="album-badge">${i===0?'Debut Album':'Album'}</div>
-        <h2 class="album-title">${name}</h2>
-        <div class="album-artist">${ARTIST}</div>
-        <div class="tracklist">
-          ${tracks.map(t=>`<div class="track-row">
-            <span class="track-num">${t.num||''}</span>
-            <span class="track-title">${t.title}</span>
-            <span>${t.isLatest?'<span class="track-badge">Latest</span>':''}</span>
-            <button class="track-play-btn" data-play-id="${t.id}" onclick="playById('${t.id}')">&#9654;</button>
-          </div>`).join('')}
-        </div>
-      </div>
-    </div>`;
-    container.appendChild(sec);i++;
-  });
+cur=id;
+audio.src=song.audio;
+document.getElementById('p-title').textContent=song.title;
+document.getElementById('p-sub').textContent=song.album || 'PULSE7';
+document.getElementById('p-thumb').src=song.cover;
+player.classList.add('visible');
+setButtons(id,true);
+audio.play().catch(()=>{});
+gtag('event','song_play',{artist:'PULSE7',song_title:song.title,album:song.album,player_type:'artist_site'});
 }
-function buildSingles(songs){
-  document.getElementById('singles-grid').innerHTML=songs.map(s=>`
-    <div class="single-card" onclick="playById('${s.id}')">
-      <div class="single-img-wrap">
-        <img src="${s.cover}" alt="${s.title}" loading="lazy">
-        <div class="single-overlay"><button class="single-play-btn" data-play-id="${s.id}">&#9654;</button></div>
-      </div>
-      <div class="single-info">
-        <div class="single-title">${s.title}</div>
-        <div class="single-sub">${s.album}${s.isLatest?'<span class="single-badge">Latest</span>':''}</div>
-      </div>
-    </div>`).join('');
+function videoButton(song){
+if(song.videos && song.videos.length){
+return `<a class="video-btn" href="${song.videos[0].youtube}" target="_blank">Watch Video</a>`;
+}
+return `<span class="video-btn">Video Coming Soon</span>`;
+}
+function buildAlbums(){
+const albums=new Map();
+SONGS.forEach(s=>{if(!albums.has(s.album))albums.set(s.album,[]);albums.get(s.album).push(s)});
+const wrap=document.getElementById('albums');
+wrap.innerHTML='';
+albums.forEach((tracks,album)=>{
+const cover=tracks[0].albumCover || tracks[0].cover;
+const sec=document.createElement('section');
+sec.className='album-section';
+sec.innerHTML=`<div class="album-layout">
+<div><img class="album-cover" src="${cover}" alt="${album}"></div>
+<div>
+<div class="eyebrow">Album</div>
+<h2 class="album-title">${album}</h2>
+<div class="meta">PULSE7</div>
+<div class="tracklist">
+${tracks.map(t=>`<div class="track-row">
+<span class="track-num">${t.num||''}</span>
+<span class="track-title">${t.title}</span>
+${videoButton(t)}
+<button class="track-play" data-play-id="${t.id}" onclick="playById('${t.id}')">Play</button>
+</div>`).join('')}
+</div>
+<h3 class="album-tracks-title">Album Tracks</h3>
+<div class="cards">
+${tracks.map(t=>`<div class="song-card">
+<img src="${t.cover}" alt="${t.title}">
+<h4>${t.title}</h4>
+<p>${t.album}</p>
+${videoButton(t)}
+</div>`).join('')}
+</div>
+</div>
+</div>`;
+wrap.appendChild(sec);
+});
 }
 function updateLatest(song){
-  if(!song)return;
-  document.getElementById('latest-section-title').textContent=song.title;
-  document.getElementById('latest-title').textContent=song.title;
-  document.getElementById('latest-sub').textContent=`${ARTIST} · ${song.album||''}`;
-  const cv=document.getElementById('latest-cover');cv.src=song.cover||'';cv.alt=song.title;
-  const lb=document.getElementById('latest-play-btn');lb.onclick=()=>playById(song.id);lb.dataset.playId=song.id;
-  const hb=document.getElementById('hero-play-btn');hb.textContent=`▶  Play ${song.title}`;hb.onclick=()=>playById(song.id);
+if(!song)return;
+document.getElementById('latest-section-title').textContent=song.title;
+document.getElementById('latest-title').textContent=song.title;
+document.getElementById('latest-cover').src=song.cover;
+document.getElementById('latest-play-btn').onclick=()=>playById(song.id);
+document.getElementById('hero-play-btn').onclick=()=>playById(song.id);
 }
 async function init(){
-  try{
-    const res=await fetch(`${SONGS_URL}?cb=${Date.now()}`);
-    SONGS=await res.json();ORDER=SONGS.map(s=>s.id);
-    buildAlbums(SONGS);buildSingles(SONGS);
-    const latest=SONGS.find(s=>s.isLatest)||SONGS[SONGS.length-1];
-    updateLatest(latest);
-    try{const lr=await fetch(`${LATEST_URL}?cb=${Date.now()}`);const ld=await lr.json();if(ld.title){const m=SONGS.find(s=>s.title===ld.title);if(m)updateLatest(m);}}catch(e){}
-  }catch(e){document.getElementById('albums-loading').textContent='Music unavailable.';}
+const res=await fetch('songs.json?cb='+Date.now());
+SONGS=await res.json();
+buildAlbums();
+updateLatest(SONGS.find(s=>s.isLatest)||SONGS[0]);
 }
+document.getElementById('p-playbtn').onclick=()=>{if(cur)playById(cur)};
+document.getElementById('p-close').onclick=()=>{audio.pause();player.classList.remove('visible');setButtons(cur,false);cur=null};
+audio.addEventListener('ended',()=>{const i=SONGS.findIndex(s=>s.id===cur);playById(SONGS[(i+1)%SONGS.length].id)});
 init();
-window.addEventListener('scroll',()=>{document.getElementById('topnav').classList.toggle('scrolled',window.scrollY>60);});
 </script>
 </body>
 </html>
