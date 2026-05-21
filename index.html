@@ -10,218 +10,1152 @@ gtag('js', new Date());
 gtag('config', 'G-4PCFSEQJZ1');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PULSE7 — Endless Echo</title>
+<title>PULSE7 — K-pop / dance-pop</title>
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--black:#020106;--ink:#080412;--deep:#0C0618;--mid:#10081E;--pink:#FF2D78;--cyan:#00C8FF;--pearl:#D8D0F0;--silver:#8878A8;--white:#F0EAFF;--mist:#4A3870}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--black:#0A0805;--ink:#131009;--deep:#1A1510;--mid:#221C12;
+--accent:#C8922A;--accent-lt:#E8AD4A;--cream:#F2EBD8;--muted:#8A7E68;--white:#F8F2E4;
+--accent-glow:color-mix(in srgb, var(--accent) 28%, transparent);
+--line:color-mix(in srgb, var(--accent) 32%, transparent);
+--discography-bg:url('images/artist/pulse7-discography-bg.png');
+--video-bg:url('images/artist/pulse7-video-bg.png');
+--faded-line:color-mix(in srgb, var(--accent) 14%, transparent);
+--radius:0px;
+}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--pearl);font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
-#topnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:rgba(2,1,6,.9);border-bottom:1px solid rgba(255,45,120,.18);backdrop-filter:blur(12px)}
-.nav-logo{height:36px;width:auto;filter:brightness(1.4)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--silver);text-decoration:none;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
-.nav-links a:hover{color:var(--pink)}
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('images/artist/pulse7-photo.png') center/cover no-repeat;filter:brightness(.35)}
-.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,1,6,.35),rgba(2,1,6,.98)),radial-gradient(circle at 70% 45%,rgba(255,45,120,.18),transparent 45%)}
-.hero-content{position:relative;z-index:2;padding:0 3.5rem 5rem;max-width:650px}
-.hero-logo{height:64px;width:auto;margin-bottom:1.4rem;filter:brightness(1.5)}
-.eyebrow{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pink);margin-bottom:.9rem}
-.hero h1{font-family:'Space Mono',monospace;font-size:clamp(2rem,6vw,4.5rem);line-height:1;color:var(--white);margin-bottom:1rem}
-.hero p{font-size:clamp(1rem,2vw,1.35rem);color:var(--pearl);margin-bottom:2rem}
-.btn{background:var(--pink);color:var(--white);border:0;padding:.85rem 1.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;margin-right:.75rem}
-.btn.secondary{background:transparent;border:1px solid rgba(255,45,120,.5)}
-.section-header{text-align:center;padding:5rem 2rem 3rem}
-.section-title{font-family:'Space Mono',monospace;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white)}
-.rule{width:48px;height:2px;background:linear-gradient(90deg,var(--pink),var(--cyan));margin:1rem auto 0}
-#bio{background:var(--ink);padding-bottom:5rem}
-.bio-inner{max-width:720px;margin:0 auto;text-align:center;padding:0 2rem;color:var(--silver)}
-#latest-single,#latest-video,.album-section{border-top:1px solid rgba(255,45,120,.18);padding:5rem 0;background:var(--deep)}
-.latest-inner,.album-layout{max-width:1060px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:start}
-.cover,.album-cover{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:0 0 55px rgba(255,45,120,.22),0 22px 60px rgba(0,0,0,.85)}
-.latest-title,.album-title{font-family:'Space Mono',monospace;font-size:clamp(1.7rem,3.5vw,2.7rem);color:var(--white);line-height:1.1;margin-bottom:.7rem}
-.meta{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);margin-bottom:1.5rem}
-.video-placeholder{max-width:900px;margin:0 auto;padding:4rem 2rem;border:1px solid rgba(255,45,120,.25);background:rgba(255,45,120,.05);text-align:center;color:var(--silver)}
-.video-placeholder strong{display:block;color:var(--white);font-family:'Space Mono',monospace;font-size:1.4rem;margin-bottom:.5rem}
-.tracklist{border-top:1px solid rgba(255,45,120,.12)}
-.track-row{display:grid;grid-template-columns:2rem 1fr auto auto;gap:.75rem;align-items:center;padding:.85rem 0;border-bottom:1px solid rgba(255,45,120,.08)}
-.track-num{font-family:'Space Mono',monospace;color:var(--mist);opacity:.55;text-align:right}
-.track-title{color:var(--pearl)}
-.track-play,.video-btn{background:transparent;border:1px solid rgba(255,45,120,.45);color:var(--pink);padding:.35rem .6rem;cursor:pointer;text-decoration:none;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase}
-.track-play.playing{background:rgba(255,45,120,.18)}
-.album-tracks-title{font-family:'Space Mono',monospace;color:var(--white);font-size:1.2rem;margin:2.5rem 0 1rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
-.song-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
-.song-card h4{color:var(--white);font-size:.95rem;margin-top:.65rem}
-.song-card p{color:var(--mist);font-size:.72rem}
-#player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(2,1,6,.97);border-top:1px solid rgba(255,45,120,.3);padding:.8rem 1.5rem;align-items:center;gap:1rem}
-#player.visible{display:flex}
-#p-thumb{width:44px;height:44px;object-fit:cover}
-#p-title{color:var(--white);font-weight:700}
-#p-playbtn,#p-close{background:transparent;border:1px solid rgba(255,45,120,.45);color:var(--pink);padding:.4rem .7rem;cursor:pointer}
-footer{padding:4rem 2rem;text-align:center;background:var(--black);border-top:1px solid rgba(255,45,120,.18)}
-.foot-logo{height:44px}
-@media(max-width:768px){.latest-inner,.album-layout{grid-template-columns:1fr}.nav-links{gap:1rem}.hero-content{padding:0 1.5rem 4rem}}
+body{
+  background:var(--black);
+  color:var(--cream);
+  font-family:'Barlow',sans-serif;
+  font-weight:300;
+  font-size:15px;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.18;
+  background:
+    radial-gradient(circle at 50% 8%, var(--accent-glow), transparent 34%),
+    radial-gradient(circle at 12% 82%, rgba(255,255,255,.04), transparent 25%),
+    radial-gradient(circle at 90% 60%, var(--accent-glow), transparent 28%);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.12;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+  background-size:220px 220px;
+}
+a{color:inherit}
+#topnav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 2rem;
+  background:rgba(0,0,0,.72);
+  border-bottom:1px solid var(--faded-line);
+  backdrop-filter:blur(14px);
+}
+.nav-left,.nav-right{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-left a,.nav-right a{
+  color:var(--cream);
+  opacity:.82;
+  text-decoration:none;
+  font-family:'Barlow Condensed',serif;
+  font-size:.78rem;
+  letter-spacing:.21em;
+  text-transform:uppercase;
+  transition:color .2s,opacity .2s;
+}
+.nav-left a:hover,.nav-right a:hover{color:var(--accent-lt);opacity:1}
+
+.stage{
+  position:relative;
+  min-height:74vh;
+  overflow:hidden;
+  border-bottom:1px solid var(--faded-line);
+  background:var(--black);
+}
+.stage-bg{
+  position:absolute;
+  inset:0;
+  background-image:url('images/artist/pulse7-hero-photo.png');
+  background-size:cover;
+  background-position:center 44%;
+  background-repeat:no-repeat;
+  filter:brightness(.62) contrast(1.06) saturate(1.08);
+  transform:scale(1.035);
+}
+.stage-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.54) 0%,rgba(0,0,0,.18) 36%,rgba(0,0,0,.48) 78%,rgba(0,0,0,.82) 100%),
+    radial-gradient(ellipse 62% 36% at 50% 24%,rgba(255,255,255,.16),transparent 62%),
+    linear-gradient(to right,rgba(0,0,0,.62),transparent 24%,transparent 76%,rgba(0,0,0,.68));
+}
+.stage-inner{
+  position:relative;
+  z-index:2;
+  min-height:74vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  text-align:center;
+  padding:4.6rem 1.5rem 2rem;
+}
+.stage-logo img{
+  width:min(1900px,99vw);
+  max-height:820px;
+  object-fit:contain;
+  mix-blend-mode:screen;
+  filter:brightness(1.55) contrast(1.08) drop-shadow(0 0 42px rgba(0,0,0,.9)) drop-shadow(0 0 26px var(--accent-glow));
+}
+.stage-title-fallback{
+  display:none;
+  font-family:'Bebas Neue',serif;
+  font-size:clamp(4rem,9vw,8rem);
+  line-height:.95;
+  color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:1.2rem;
+}
+.stage-tag{
+  margin-top:1.1rem;
+  color:var(--accent);
+  font-family:'Barlow Condensed',serif;
+  font-size:.72rem;
+  letter-spacing:.36em;
+  text-transform:uppercase;
+}
+.stage-tagline{
+  max-width:760px;
+  margin:.4rem auto 1.1rem;
+  color:var(--cream);
+  font-family:'Bebas Neue',serif;
+  font-size:clamp(1.1rem,2vw,1.65rem);
+  font-style:italic;
+  opacity:.92;
+  line-height:1.45;
+}
+.stage-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-primary,.latest-play-btn,.track-play-btn,.video-btn{cursor:pointer}
+.cta-primary{
+  background:var(--accent);
+  color:var(--black);
+  border:none;
+  padding:.9rem 2.2rem;
+  font-family:'Barlow Condensed',serif;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:background .2s,transform .15s;
+}
+.cta-primary:hover{background:var(--accent-lt);transform:translateY(-1px)}
+.cta-secondary{
+  background:rgba(0,0,0,.28);
+  color:var(--cream);
+  border:1px solid var(--line);
+  padding:.9rem 2.2rem;
+  text-decoration:none;
+  display:inline-block;
+  font-family:'Barlow Condensed',serif;
+  font-size:.8rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.cta-secondary:hover{border-color:var(--accent);color:var(--accent-lt);background:rgba(0,0,0,.42)}
+
+.section-header{position:relative;text-align:center;padding:4.25rem 2rem 2.5rem;z-index:1}
+.section-eyebrow{
+  font-family:'Barlow Condensed',serif;
+  font-size:.66rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.85rem;
+}
+.section-title{font-family:'Bebas Neue',serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:400;color:var(--white);text-transform:uppercase;letter-spacing:.045em}
+.rule{width:78px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);margin:1rem auto 0;opacity:.88}
+
+#latest-single{
+  position:relative;
+  background:linear-gradient(135deg,var(--mid),var(--ink));
+  padding:4rem 0;
+  border-top:1px solid var(--faded-line);
+  border-bottom:1px solid var(--faded-line);
+  z-index:1;
+}
+.latest-inner{max-width:1080px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:360px 1fr;gap:4rem;align-items:center}
+.latest-cover{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:var(--radius);box-shadow:0 0 50px var(--accent-glow),0 24px 64px rgba(0,0,0,.8)}
+.latest-badge,.album-badge{font-family:'Barlow Condensed',serif;display:inline-block;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:.28rem .85rem;margin-bottom:1.2rem}
+.latest-title{font-family:'Bebas Neue',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:400;color:var(--white);line-height:1.12;margin-bottom:.4rem;text-transform:uppercase}
+.latest-sub,.album-artist{font-family:'Barlow Condensed',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
+.latest-play-btn{display:inline-flex;align-items:center;gap:.75rem;background:transparent;color:var(--accent);border:1px solid var(--line);padding:.85rem 2rem;font-family:'Barlow Condensed',serif;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
+.latest-play-btn:hover{background:var(--accent-glow)}
+
+#albums{
+  position:relative;
+  z-index:1;
+  padding-bottom:4.5rem;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.48),rgba(0,0,0,.62)),
+    var(--discography-bg) center center / cover fixed no-repeat,
+    var(--black);
+  border-top:1px solid var(--faded-line);
+}
+.discography-header{text-align:center;padding:4.25rem 2rem 2.6rem;border-top:1px solid var(--faded-line)}
+
+.album-detail-section{padding:0 0 4.75rem}
+
+.album-layout{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:minmax(260px,340px) minmax(0,1fr);
+  gap:4rem;
+  align-items:start;
+}
+
+.album-layout.cover-right{
+  grid-template-columns:minmax(0,1fr) minmax(260px,340px);
+}
+
+.album-layout.cover-right .album-cover-wrap{
+  grid-column:2;
+  grid-row:1;
+}
+
+.album-layout.cover-right .album-info{
+  grid-column:1;
+  grid-row:1;
+}
+
+.album-cover-wrap{
+  width:100%;
+}
+
+.album-info{
+  min-width:0;
+}
+
+.album-track-art-block{
+  grid-column:1/-1;
+  margin-top:2.75rem;
+  padding-top:2.1rem;
+  border-top:1px solid var(--faded-line);
+}
+
+.album-track-art-heading{
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.35rem;
+  text-align:center;
+}
+
+.release-wall{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,240px));
+  justify-content:center;
+  gap:1.7rem;
+}
+.release-card{
+  cursor:pointer;
+  max-width:240px;
+  text-align:center;
+}
+.release-art{
+  position:relative;
+  aspect-ratio:1;
+  border:1px solid var(--faded-line);
+  overflow:hidden;
+  background:var(--black);
+  box-shadow:0 16px 42px rgba(0,0,0,.46);
+}
+.release-art img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.84);transition:transform .35s,filter .35s}
+.release-card:hover img{transform:scale(1.04);filter:brightness(1)}
+.release-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);transition:background .25s}
+.release-card:hover .release-overlay{background:rgba(0,0,0,.38)}
+.release-play{width:48px;height:48px;border:2px solid var(--accent);background:rgba(0,0,0,.65);color:var(--accent);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.86);transition:opacity .25s,transform .25s}
+.release-card:hover .release-play{opacity:1;transform:scale(1)}
+.release-title{font-family:'Bebas Neue',serif;font-size:1.08rem;color:var(--white);line-height:1.15;margin-top:.85rem;text-transform:uppercase}
+.release-album{font-family:'Barlow Condensed',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+.lower-video-section{
+  position:relative;
+  z-index:1;
+  padding:0 0 5rem;
+  border-top:1px solid var(--faded-line);
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,.58)),
+    var(--video-bg) center center / cover fixed no-repeat,
+    var(--black);
+}
+.feature-video{position:relative;z-index:3;width:min(920px,86vw);margin:0 auto}
+.video-panel{
+  background:rgba(0,0,0,.16);
+  border:1px solid var(--line);
+  box-shadow:0 22px 80px rgba(0,0,0,.52);
+  backdrop-filter:blur(2px);
+}
+.video-thumb{position:relative;display:none;aspect-ratio:16/9;overflow:hidden;background:#000;cursor:pointer}
+.video-thumb.has-video{display:block}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82);transition:filter .25s,transform .35s}
+.video-thumb:hover img{filter:brightness(1);transform:scale(1.02)}
+.video-play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)}
+.video-play-circle{width:76px;height:76px;border-radius:50%;background:transparent;border:2px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.55rem;padding-left:5px;box-shadow:0 0 24px var(--accent-glow)}
+.video-coming-soon{
+  display:none;
+  color:var(--cream);
+  padding:4rem 2rem;
+  min-height:230px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  background:rgba(0,0,0,.18);
+}
+.video-coming-soon.visible{display:flex}
+.video-coming-soon .play-triangle{width:0;height:0;border-top:28px solid transparent;border-bottom:28px solid transparent;border-left:46px solid var(--accent);opacity:.9;margin-bottom:1.6rem;filter:drop-shadow(0 0 18px var(--accent-glow))}
+.video-coming-soon strong{font-family:'Bebas Neue',serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:.55rem;text-transform:uppercase}
+.video-coming-soon span{color:var(--muted);font-size:.92rem;max-width:560px;text-align:center}
+
+#bio{
+  position:relative;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.34),rgba(0,0,0,.54)),
+    var(--discography-bg) center center / cover fixed no-repeat,
+    transparent;
+  padding-bottom:5rem;
+  border-top:1px solid var(--faded-line);
+  border-bottom:1px solid var(--faded-line);
+  z-index:1;
+}
+.bio-inner{max-width:760px;margin:0 auto;padding:0 2rem;text-align:center}
+.bio-logo{margin-bottom:2rem}
+.bio-logo img{height:140px;max-width:min(720px,90vw);object-fit:contain;mix-blend-mode:screen;filter:brightness(1.16) drop-shadow(0 0 18px var(--accent-glow))}
+.bio-inner p{color:var(--muted);line-height:1.95;font-size:1.02rem;margin-bottom:1.2rem}
+
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);height:360px;overflow:hidden;border-top:1px solid var(--line)}
+.photo-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.76) saturate(.88);transition:filter .4s,transform .5s}
+.photo-strip img:hover{filter:brightness(1) saturate(1);transform:scale(1.03)}
+.photo-strip img.missing{display:none}
+.photo-strip.empty{display:none}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.5rem;
+  padding:1.5rem;
+}
+.video-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  transition:transform .2s,border-color .2s,background .2s;
+}
+.video-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--accent);
+  background:rgba(0,0,0,.34);
+}
+.video-embed-wrap{
+  position:relative;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  background:#000;
+}
+.video-embed-wrap iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.video-card-title{
+  font-family:'Bebas Neue',serif;
+  font-size:1.2rem;
+  color:var(--white);
+  padding:1rem 1rem .15rem;
+  text-transform:uppercase;
+}
+.video-card-actions{
+  padding:.45rem 1rem 1rem;
+}
+.video-card-sub{
+  font-family:'Barlow Condensed',serif;
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  padding:0 1rem 1rem;
+}
+
+#player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:color-mix(in srgb,var(--black) 97%, transparent);border-top:1px solid var(--line);backdrop-filter:blur(16px);grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+#player.visible{display:grid;transform:translateY(0)}
+.p-info{display:flex;align-items:center;gap:1rem;min-width:0}
+.p-thumb{width:42px;height:42px;object-fit:cover;flex-shrink:0;border:1px solid var(--line)}
+.p-title{font-family:'Bebas Neue',serif;font-size:1rem;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-sub{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
+.p-controls{display:flex;align-items:center;flex-direction:column;flex:1;gap:.5rem;min-width:0}
+.p-btn-row{display:flex;align-items:center;gap:1.2rem}
+.p-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:.9rem;padding:.25rem;transition:color .2s}
+.p-btn:hover{color:var(--accent-lt)}
+#p-playbtn{width:36px;height:36px;border:1px solid var(--line);background:transparent;color:var(--accent);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.progress-wrap{height:4px;background:color-mix(in srgb,var(--accent) 14%, transparent);width:100%;max-width:520px;cursor:pointer}
+.progress-fill{height:100%;width:0;background:linear-gradient(to right,var(--accent),var(--accent-lt))}
+.p-extra{display:flex;align-items:center;gap:.8rem}
+#volume{width:90px;accent-color:var(--accent)}
+
+footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2rem 3rem;text-align:center}
+.foot-logo{height:92px;width:auto;max-width:520px;object-fit:contain;opacity:.9;mix-blend-mode:screen}
+.foot-text{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:1rem}
+
+
+.album-layout{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:minmax(260px,340px) minmax(0,1fr);
+  gap:4rem;
+  align-items:start;
+}
+.album-cover-wrap{width:100%}
+.album-info{min-width:0}
+.album-track-art-block{
+  grid-column:1/-1;
+  margin-top:2.75rem;
+  padding-top:2.1rem;
+  border-top:1px solid var(--faded-line);
+}
+.album-track-art-heading{
+  font-family:var(--font-alt, inherit);
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.35rem;
+  text-align:center;
+}
+
+
+.album-layout{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:minmax(260px,340px) minmax(0,1fr);
+  gap:4rem;
+  align-items:start;
+}
+.album-layout.cover-right{
+  grid-template-columns:minmax(0,1fr) minmax(260px,340px);
+}
+.album-layout.cover-right .album-cover-wrap{
+  grid-column:2;
+  grid-row:1;
+}
+.album-layout.cover-right .album-info{
+  grid-column:1;
+  grid-row:1;
+}
+.album-cover-wrap{width:100%}
+.album-info{min-width:0}
+.album-track-art-block{
+  grid-column:1/-1;
+  margin-top:2.75rem;
+  padding-top:2.1rem;
+  border-top:1px solid var(--faded-line);
+}
+.album-track-art-heading{
+  font-family:'Barlow Condensed',serif;
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.35rem;
+  text-align:center;
+}
+
+
+/* v2.8 ALBUM PROPORTIONS LOCK */
+.album-detail-section{
+  padding:3.5rem 0 4.75rem;
+}
+
+.album-layout{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  display:grid;
+  grid-template-columns:320px minmax(0,1fr);
+  gap:4rem;
+  align-items:start;
+}
+
+.album-layout.cover-right{
+  grid-template-columns:minmax(0,1fr) 320px;
+}
+
+.album-layout.cover-right .album-cover-wrap{
+  grid-column:2;
+  grid-row:1;
+}
+
+.album-layout.cover-right .album-info{
+  grid-column:1;
+  grid-row:1;
+}
+
+.album-cover-wrap{
+  width:100%;
+  max-width:320px;
+}
+
+.album-cover{
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+}
+
+.album-info{
+  min-width:0;
+  padding-top:.25rem;
+}
+
+.tracklist{
+  margin-top:1.5rem;
+}
+
+.album-track-art-block{
+  grid-column:1/-1;
+  margin-top:2.6rem;
+  padding-top:2rem;
+  border-top:1px solid var(--faded-line);
+}
+
+.album-track-art-heading{
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.25rem;
+  text-align:left;
+}
+
+.release-wall{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,165px));
+  justify-content:start;
+  gap:1.25rem;
+}
+
+.release-card{
+  cursor:pointer;
+  max-width:165px;
+  text-align:left;
+}
+
+.release-art{
+  position:relative;
+  aspect-ratio:1;
+  border:1px solid var(--faded-line);
+  overflow:hidden;
+  background:var(--black);
+  box-shadow:0 16px 42px rgba(0,0,0,.46);
+}
+
+.release-title{
+  font-size:.92rem;
+  margin-top:.65rem;
+  line-height:1.15;
+}
+
+.release-album{
+  font-size:.55rem;
+  letter-spacing:.12em;
+}
+
+
+/* v2.8.3 TRACKLIST FORMAT LOCK */
+.tracklist{
+  width:100%;
+  margin-top:1.55rem;
+  border-top:1px solid color-mix(in srgb,var(--accent) 14%, transparent);
+}
+
+.track-row{
+  display:grid !important;
+  grid-template-columns:44px minmax(0,1fr) auto 34px !important;
+  align-items:center !important;
+  gap:1rem !important;
+  min-height:48px;
+  padding:.72rem 0 !important;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 9%, transparent);
+}
+
+.track-num{
+  display:block !important;
+  font-size:.68rem;
+  color:var(--muted);
+  opacity:.5;
+  text-align:right;
+}
+
+.track-title{
+  display:block !important;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:var(--cream);
+  font-size:.94rem;
+  line-height:1.2;
+}
+
+.track-badge{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  font-size:.55rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.18rem .55rem;
+  color:var(--accent);
+  border:1px solid var(--line);
+}
+
+.track-play-btn{
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  padding:0;
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--accent);
+  font-size:.65rem;
+  cursor:pointer;
+}
+
+
+/* v2.8.4 ALBUM MARKUP + TRACKLIST LOCK */
+.album-layout{
+  max-width:1120px !important;
+  margin:0 auto !important;
+  padding:0 2.5rem !important;
+  display:grid !important;
+  grid-template-columns:320px minmax(0,1fr) !important;
+  gap:4rem !important;
+  align-items:start !important;
+}
+
+.album-layout.cover-right{
+  grid-template-columns:minmax(0,1fr) 320px !important;
+}
+
+.album-layout.cover-right .album-cover-wrap{
+  grid-column:2 !important;
+  grid-row:1 !important;
+}
+
+.album-layout.cover-right .album-info{
+  grid-column:1 !important;
+  grid-row:1 !important;
+}
+
+.album-cover-wrap{
+  width:100% !important;
+  max-width:320px !important;
+}
+
+.album-cover{
+  width:100% !important;
+  max-width:320px !important;
+  aspect-ratio:1 / 1 !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+
+.album-info{
+  min-width:0 !important;
+  padding-top:.25rem !important;
+}
+
+.tracklist{
+  width:100% !important;
+  margin-top:1.55rem !important;
+  border-top:1px solid color-mix(in srgb,var(--accent) 14%, transparent) !important;
+}
+
+.track-row{
+  display:grid !important;
+  grid-template-columns:44px minmax(0,1fr) auto 34px !important;
+  align-items:center !important;
+  gap:1rem !important;
+  min-height:48px !important;
+  padding:.72rem 0 !important;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 9%, transparent) !important;
+}
+
+.track-num{
+  display:block !important;
+  font-size:.68rem !important;
+  color:var(--muted) !important;
+  opacity:.5 !important;
+  text-align:right !important;
+}
+
+.track-title{
+  display:block !important;
+  min-width:0 !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+  color:var(--cream) !important;
+  font-size:.94rem !important;
+  line-height:1.2 !important;
+}
+
+.track-badge-cell{
+  display:flex !important;
+  justify-content:flex-end !important;
+  align-items:center !important;
+}
+
+.track-badge{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  font-size:.55rem !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+  padding:.18rem .55rem !important;
+  color:var(--accent) !important;
+  border:1px solid var(--line) !important;
+}
+
+.track-play-btn{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:28px !important;
+  height:28px !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:1px solid var(--line) !important;
+  color:var(--accent) !important;
+  font-size:.65rem !important;
+  cursor:pointer !important;
+}
+
+.album-track-art-block{
+  grid-column:1 / -1 !important;
+  margin-top:2.6rem !important;
+  padding-top:2rem !important;
+  border-top:1px solid var(--faded-line) !important;
+}
+
+.album-track-art-heading{
+  font-size:.72rem !important;
+  letter-spacing:.32em !important;
+  text-transform:uppercase !important;
+  color:var(--accent) !important;
+  margin-bottom:1.25rem !important;
+  text-align:left !important;
+}
+
+.release-wall{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(145px,165px)) !important;
+  justify-content:start !important;
+  gap:1.25rem !important;
+}
+
+.release-card{
+  max-width:165px !important;
+  text-align:left !important;
+}
+
+@media(max-width:900px){
+
+  .track-row{
+    grid-template-columns:34px minmax(0,1fr) auto 30px !important;
+    gap:.65rem !important;
+  }
+  .track-title{
+    font-size:.88rem;
+  }
+
+  #topnav{padding:0 1.25rem;height:62px}
+  .nav-left,.nav-right{gap:1rem}
+  .nav-left a,.nav-right a{font-size:.64rem}
+  .nav-right li:nth-child(2){display:none}
+  .stage{min-height:74vh}
+  .stage-inner{min-height:74vh;padding:5.6rem 1rem 2.2rem}
+  .stage-logo img{width:min(940px,98vw);max-height:360px}
+  .latest-inner,.album-layout,.album-layout.cover-right{grid-template-columns:1fr}
+  .album-layout.cover-right .album-cover-wrap,.album-layout.cover-right .album-info{grid-column:auto;grid-row:auto}
+
+  .release-wall{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:1rem}
+  .release-card{max-width:none}
+  #albums,.lower-video-section{background-attachment:scroll}
+  .photo-strip{grid-template-columns:1fr;height:auto}
+  .photo-strip img{height:340px}
+  #player{grid-template-columns:1fr;padding:.9rem 1rem}
+  .p-extra{display:none}
+}
+
+/* HTR LOCKED GLOBAL STANDARD OVERRIDE - past/present/future */
+#latest-single{padding:1.65rem 0!important;}
+.latest-inner{max-width:1040px!important;padding:0 2rem!important;grid-template-columns:170px 1fr!important;gap:1.75rem!important;align-items:center!important;}
+.latest-cover{width:100%!important;max-width:170px!important;aspect-ratio:1!important;object-fit:cover!important;box-shadow:0 0 28px var(--accent-glow),0 12px 34px rgba(0,0,0,.68)!important;}
+.latest-badge,.album-badge{margin-bottom:.65rem!important;padding:.24rem .75rem!important;}
+.latest-title{font-size:clamp(1.55rem,2.8vw,2.35rem)!important;margin-bottom:.18rem!important;line-height:1.05!important;}
+.latest-sub,.album-artist{margin-bottom:.85rem!important;}
+.latest-play-btn{padding:.58rem 1.35rem!important;font-size:.68rem!important;}
+.lower-video-section{background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,.58)),var(--video-bg) center center / cover fixed no-repeat,var(--black)!important;}
+.lower-video-section > .section-header{background:color-mix(in srgb,var(--black) 94%, transparent)!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;padding:2.1rem 2rem 1.95rem!important;margin-bottom:3rem!important;}
+.lower-video-section > .section-header .section-eyebrow{display:none!important;}
+.video-grid{display:flex!important;flex-direction:column!important;gap:2rem!important;max-width:920px!important;margin:0 auto!important;padding:1.5rem!important;}
+.video-card{width:100%!important;box-shadow:0 22px 80px rgba(0,0,0,.42)!important;}
+#bio{background:linear-gradient(to bottom,rgba(0,0,0,.42),rgba(0,0,0,.58)),var(--video-bg) center center / cover fixed no-repeat,var(--black)!important;}
+.bio-logo{display:none!important;}
+.photo-strip{background:var(--video-bg) center center / cover fixed no-repeat!important;}
+footer{background:linear-gradient(to bottom,rgba(0,0,0,.28),rgba(0,0,0,.52)),var(--video-bg) center center / cover fixed no-repeat,transparent!important;padding:2.35rem 2rem 2.75rem!important;}
+
 </style>
 </head>
 <body>
 <nav id="topnav">
-<img class="nav-logo" src="images/logos/pulse7-logo.png" alt="PULSE7">
-<ul class="nav-links">
-<li><a href="#bio">About</a></li>
-<li><a href="#latest-video">Video</a></li>
-<li><a href="#albums">Music</a></li>
-<li><a href="https://stevep999.github.io/hello-texas-records/" target="_blank">Label</a></li>
-</ul>
+  <ul class="nav-left">
+    <li><a href="#">Home</a></li>
+    <li><a href="#albums">Music</a></li>
+    <li><a href="#video-stage">Videos</a></li>
+  </ul>
+  <ul class="nav-right">
+    <li><a href="#bio">About</a></li>
+    <li><a href="#photos">Photos</a></li>
+    <li><a href="https://hellotexasrecords.com">Label</a></li>
+  </ul>
 </nav>
 
-<section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<div class="eyebrow">Hello Texas Records</div>
-<img class="hero-logo" src="images/logos/pulse7-logo.png" alt="PULSE7">
-<h1>Endless Echo</h1>
-<p>Signal locked. Frequency found.</p>
-<button class="btn" id="hero-play-btn">▶ Play Latest Single</button>
-<a class="btn secondary" href="#albums">Discography</a>
-</div>
-</section>
-
-<section id="bio">
-<div class="section-header"><div class="eyebrow">About</div><h2 class="section-title">PULSE7</h2><div class="rule"></div></div>
-<div class="bio-inner">
-<p>PULSE7 is a seven-member K-pop and electronic pop group with a global sound: precision choreography, cinematic production, and hooks engineered to hit from the first beat.</p>
-<p>Debut album <em>Endless Echo</em> arrives electric, pulsing, and nocturnal. Released through Hello Texas Records.</p>
-</div>
+<section class="stage">
+  <div class="stage-bg"></div>
+  <div class="stage-inner">
+    <div class="stage-logo"><img src="images/logos/pulse7-logo.png" alt="PULSE7 logo" onerror="this.style.display='none';document.getElementById('stage-fallback').style.display='block';"></div>
+    <h1 id="stage-fallback" class="stage-title-fallback">PULSE7</h1>
+    <div class="stage-tag">Hello Texas Records</div>
+    <p class="stage-tagline">Coming soon</p>
+    <div class="stage-actions">
+      <button class="cta-primary" onclick="playLatest()">Listen Now</button>
+      <a class="cta-secondary" href="#albums">Discography</a>
+    </div>
+  </div>
 </section>
 
 <section id="latest-single">
-<div class="section-header"><div class="eyebrow">Latest Single</div><h2 class="section-title" id="latest-section-title">Two Nights</h2><div class="rule"></div></div>
-<div class="latest-inner">
-<img id="latest-cover" class="cover" src="images/covers/pulse7-two-nights-cover.png" alt="Two Nights">
-<div>
-<h2 class="latest-title" id="latest-title">Two Nights</h2>
-<div class="meta" id="latest-sub">PULSE7 · Endless Echo</div>
-<button class="btn" id="latest-play-btn">▶ Play Now</button>
-</div>
-</div>
-</section>
-
-<section id="latest-video">
-<div class="section-header"><div class="eyebrow">Latest Video</div><h2 class="section-title">Video Coming Soon</h2><div class="rule"></div></div>
-<div class="video-placeholder">
-<strong>Video Coming Soon</strong>
-<span>PULSE7 does not have a video assigned yet. The video system is installed and ready.</span>
-</div>
+  <div class="latest-inner" id="latest-render"></div>
 </section>
 
 <div id="albums"></div>
 
+<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Watch</div><h2 class="section-title">Videos</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
+
+<section id="bio">
+  <div class="section-header">
+    <div class="section-eyebrow">Artist</div>
+    <h2 class="section-title">About</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="bio-inner">
+    <div class="bio-logo"><img src="images/logos/pulse7-logo.png" alt="PULSE7 logo" onerror="this.style.display='none'"></div>
+    <p>Coming soon</p>
+  </div>
+</section>
+
+<div id="photos"></div>
+<div id="photo-strip" class="photo-strip">
+  <img src="images/artist/pulse7-photo-1.png" alt="PULSE7 photo 1" onerror="this.classList.add('missing');checkPhotoStrip();">
+  <img src="images/artist/pulse7-photo-2.png" alt="PULSE7 photo 2" onerror="this.classList.add('missing');checkPhotoStrip();">
+  <img src="images/artist/pulse7-photo-3.png" alt="PULSE7 photo 3" onerror="this.classList.add('missing');checkPhotoStrip();">
+</div>
+
 <footer>
-<img src="images/logos/pulse7-logo.png" alt="PULSE7" class="foot-logo">
-<div class="meta">Hello Texas Records</div>
+  <img class="foot-logo" src="images/logos/pulse7-logo.png" alt="PULSE7 logo" onerror="this.style.display='none'">
+  <div class="foot-text">Hello Texas Records</div>
 </footer>
 
-<audio id="audio" playsinline preload="none"></audio>
 <div id="player">
-<img id="p-thumb" src="" alt="">
-<div style="flex:1"><div id="p-title">—</div><div class="meta" id="p-sub">PULSE7</div></div>
-<button id="p-playbtn">▶</button>
-<button id="p-close">×</button>
+  <div class="p-info">
+    <img id="p-thumb" class="p-thumb" alt="">
+    <div>
+      <div id="p-title" class="p-title"></div>
+      <div id="p-sub" class="p-sub"></div>
+    </div>
+  </div>
+  <div class="p-controls">
+    <div class="p-btn-row">
+      <button class="p-btn" onclick="prevTrack()">&#9664;&#9664;</button>
+      <button id="p-playbtn" onclick="togglePlay()">&#9654;</button>
+      <button class="p-btn" onclick="nextTrack()">&#9654;&#9654;</button>
+    </div>
+    <div class="progress-wrap" onclick="seek(event)"><div id="progress-fill" class="progress-fill"></div></div>
+  </div>
+  <div class="p-extra"><input id="volume" type="range" min="0" max="1" step="0.01" value="0.85"></div>
 </div>
 
+<audio id="audio"></audio>
+<script id="artist-data" type="application/json">{"artist": {"id": "pulse7", "name": "PULSE7", "genre": "K-pop / dance-pop", "tagline": "Coming soon", "bio": "Coming soon", "theme": "default", "logo": "images/logos/pulse7-logo.png", "hero": "images/artist/pulse7-hero-photo.png", "discographyBg": "images/artist/pulse7-discography-bg.png", "videoBg": "images/artist/pulse7-video-bg.png", "photos": ["images/artist/pulse7-photo-1.png", "images/artist/pulse7-photo-2.png", "images/artist/pulse7-photo-3.png"]}, "latest": {"title": "Signal Locked", "artist": "PULSE7", "album": "Endless Echo", "type": "Latest Single", "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/images/covers/pulse7-signal-locked-cover.png", "image": "https://raw.githubusercontent.com/SteveP999/pulse7/main/images/covers/pulse7-signal-locked-cover.png", "audio": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1", "videos": []}, "songs": [{"id": "signallocked", "num": "01", "title": "Signal Locked", "artist": "PULSE7", "album": "Endless Echo", "trackNumber": 1, "albumOrder": 1, "albumCover": "https://raw.githubusercontent.com/SteveP999/PULSE7/main/images/covers/pulse7-endless-echo-ALBUM-cover.png", "type": "single", "isLatest": true, "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/images/covers/pulse7-signal-locked-cover.png", "audio": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "twonights", "num": "02", "title": "Two Nights", "artist": "PULSE7", "album": "Endless Echo", "trackNumber": 2, "albumOrder": 2, "albumCover": "https://raw.githubusercontent.com/SteveP999/PULSE7/main/images/covers/pulse7-endless-echo-ALBUM-cover.png", "type": "single", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/images/covers/pulse7-two-nights-cover.png", "audio": "https://www.dropbox.com/scl/fi/2wioc1edj01haev6ifjkl/Two-Nights-PULSE7.mp3?rlkey=dwogp86reax5amxrh30bphoay&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/2wioc1edj01haev6ifjkl/Two-Nights-PULSE7.mp3?rlkey=dwogp86reax5amxrh30bphoay&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "wedontmiss", "num": "03", "title": "We Don't Miss", "artist": "PULSE7", "album": "Endless Echo", "trackNumber": 3, "albumOrder": 3, "albumCover": "https://raw.githubusercontent.com/SteveP999/PULSE7/main/images/covers/pulse7-endless-echo-ALBUM-cover.png", "type": "single", "isLatest": false, "cover": "https://raw.githubusercontent.com/SteveP999/pulse7/main/images/covers/pulse7-we-dont-miss-cover.png", "audio": "https://www.dropbox.com/scl/fi/ebabtss62r3ykf9p2f7s2/We-Don-t-Miss-Mastered-MP3.mp3?rlkey=b0vf9u40fw7guqel1c1ztu460&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/ebabtss62r3ykf9p2f7s2/We-Don-t-Miss-Mastered-MP3.mp3?rlkey=b0vf9u40fw7guqel1c1ztu460&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
 <script>
-let SONGS=[],cur=null;
-const audio=document.getElementById('audio'),player=document.getElementById('player');
+const DATA = JSON.parse(document.getElementById('artist-data').textContent);
+const SONGS = DATA.songs || [];
+let currentIndex = -1;
+const audio = document.getElementById('audio');
 
-function getSong(id){return SONGS.find(s=>s.id===id)}
-function setButtons(id,playing){
-document.querySelectorAll('[data-play-id]').forEach(b=>{
-b.textContent=(playing && b.dataset.playId===id)?'Pause':'Play';
-b.classList.toggle('playing',playing && b.dataset.playId===id);
+function esc(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+}
+function songCover(song) { return song.cover || song.albumCover || ''; }
+function videoUrl(song) {
+  const videos = Array.isArray(song.videos) ? song.videos : [];
+  if (!videos.length) return '';
+  return videos[0].youtube || videos[0].url || videos[0].href || '';
+}
+function youtubeEmbedUrl(url) {
+  const value = String(url || '').trim();
+  if (!value) return '';
+  try {
+    const u = new URL(value);
+    let id = '';
+    if (u.hostname.includes('youtu.be')) {
+      id = u.pathname.replace('/', '');
+    } else if (u.searchParams.get('v')) {
+      id = u.searchParams.get('v');
+    } else if (u.pathname.includes('/embed/')) {
+      id = u.pathname.split('/embed/')[1].split('/')[0];
+    } else if (u.pathname.includes('/shorts/')) {
+      id = u.pathname.split('/shorts/')[1].split('/')[0];
+    }
+    return id ? `https://www.youtube.com/embed/${id}` : value;
+  } catch (e) {
+    return value;
+  }
+}
+function videoMarkup(song) {
+  const url = videoUrl(song);
+  if (!url) return '<span class="track-badge">Video Coming Soon</span>';
+  return `<a class="track-badge" target="_blank" rel="noreferrer" href="${esc(url)}">Watch Video</a>`;
+}
+function renderLatest() {
+  const latest = SONGS.find(s => s.isLatest) || SONGS[0];
+  const el = document.getElementById('latest-render');
+  if (!latest) {
+    el.innerHTML = '<div><div class="latest-badge">Latest Release</div><h2 class="latest-title">New Music Coming Soon</h2></div>';
+    return;
+  }
+  el.innerHTML = `
+    <img class="latest-cover" src="${esc(songCover(latest))}" alt="${esc(latest.title)}">
+    <div>
+      <div class="latest-badge">${esc(latest.type || 'Latest Release')}</div>
+      <h2 class="latest-title">${esc(latest.title)}</h2>
+      <div class="latest-sub">${esc(latest.album || '')}</div>
+      <button class="latest-play-btn" onclick="playSongById('${esc(latest.id)}')">&#9654; Play</button>
+      ${videoMarkup(latest)}
+    </div>`;
+}
+function renderVideo() {
+  const container = document.getElementById('video-render');
+  if (!container) return;
+
+  const videoSongs = SONGS
+    .filter(s => videoUrl(s))
+    .sort((a, b) => {
+      const av = Array.isArray(a.videos) && a.videos.length ? (a.videos[0].order ?? a.videos[0].videoOrder ?? 9999) : 9999;
+      const bv = Array.isArray(b.videos) && b.videos.length ? (b.videos[0].order ?? b.videos[0].videoOrder ?? 9999) : 9999;
+      return parseInt(av, 10) - parseInt(bv, 10) || String(a.title || '').localeCompare(String(b.title || ''));
+    });
+
+  if (!videoSongs.length) {
+    container.innerHTML = '<div class="video-coming-soon visible"><div class="play-triangle"></div><strong>Video Coming Soon</strong><span>' + esc(DATA.artist.name) + ' does not have a video assigned yet. The video system is installed and ready.</span></div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="video-grid">
+      ${videoSongs.map(song => `
+        <div class="video-card video-card-embed">
+          <div class="video-embed-wrap">
+            <iframe
+              src="${esc(youtubeEmbedUrl(videoUrl(song)))}"
+              title="${esc(song.title)} video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-card-title">${esc(song.title)}</div>
+          <div class="video-card-actions">
+            <a class="track-badge" href="${esc(videoUrl(song))}" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+function trackOrder(song) {
+  const raw = song.trackNumber ?? song.albumOrder ?? song.num ?? 9999;
+  const n = parseInt(raw, 10);
+  return Number.isFinite(n) ? n : 9999;
+}
+function renderAlbums() {
+  const root = document.getElementById('albums');
+
+  if (!SONGS.length) {
+    root.innerHTML = '<section class="album-detail-section"><div class="discography-header"><div class="section-eyebrow">Music</div><h2 class="section-title">Music Coming Soon</h2><div class="rule"></div></div></section>';
+    return;
+  }
+
+  const albums = new Map();
+
+  SONGS.forEach(song => {
+    const album = song.album || 'Singles';
+    if (!albums.has(album)) albums.set(album, []);
+    albums.get(album).push(song);
+  });
+
+  let html = '<div class="discography-header"><div class="section-eyebrow">Latest Releases</div><h2 class="section-title">Discography</h2><div class="rule"></div></div>';
+
+  Array.from(albums.entries()).forEach(([album, songs], idx) => {
+    const orderedSongs = [...songs].sort((a, b) => trackOrder(a) - trackOrder(b) || String(a.title || '').localeCompare(String(b.title || '')));
+    const cover = orderedSongs.find(s => s.albumCover)?.albumCover || songCover(orderedSongs[0]) || '';
+    const sideClass = idx % 2 ? 'cover-right' : 'cover-left';
+
+    const trackRows = orderedSongs.map((song, i) => {
+      const latestBadge = (song.isLatest ? '<span class="track-badge">Latest</span>' : '') + (videoUrl(song) ? ' <a class="track-badge" target="_blank" rel="noreferrer" href="' + esc(videoUrl(song)) + '">Watch Video</a>' : '');
+      return `
+        <div class="track-row">
+          <div class="track-num">${String(i + 1).padStart(2, '0')}</div>
+          <div class="track-title" title="${esc(song.title)}">${esc(song.title)}</div>
+          <div class="track-badge-cell">${latestBadge}</div>
+          <button class="track-play-btn" onclick="playSongById('${esc(song.id)}')" aria-label="Play ${esc(song.title)}">&#9654;</button>
+        </div>
+      `;
+    }).join('');
+
+    const songCards = orderedSongs.map(song => `
+      <div class="release-card" onclick="playSongById('${esc(song.id)}')">
+        <div class="release-art">
+          <img src="${esc(songCover(song))}" alt="${esc(song.title)}">
+          <div class="release-overlay"><div class="release-play">&#9654;</div></div>
+        </div>
+        <div class="release-title">${esc(song.title)}</div>
+        <div class="release-album">${esc(song.album || '')}</div>
+        ${videoUrl(song) ? `<a class="track-badge" target="_blank" rel="noreferrer" href="${esc(videoUrl(song))}" onclick="event.stopPropagation()">Watch Video</a>` : ''}
+      </div>
+    `).join('');
+
+    html += `
+      <section class="album-detail-section">
+        <div class="album-layout ${sideClass}">
+          <div class="album-cover-wrap">
+            <img class="album-cover" src="${esc(cover)}" alt="${esc(album)}">
+          </div>
+
+          <div class="album-info">
+            <div class="album-badge">Album</div>
+            <h2 class="album-title">${esc(album)}</h2>
+            <div class="album-artist">${esc(DATA.artist.name)}</div>
+            <div class="tracklist">${trackRows}</div>
+          </div>
+
+          <div class="album-track-art-block">
+            <div class="album-track-art-heading">Album Tracks</div>
+            <div class="release-wall">${songCards}</div>
+          </div>
+        </div>
+      </section>
+    `;
+  });
+
+  root.innerHTML = html;
+}
+
+function playLatest() {
+  const latest = SONGS.find(s => s.isLatest) || SONGS[0];
+  if (latest) playSongById(latest.id);
+}
+function playSongById(id) {
+  const idx = SONGS.findIndex(s => s.id === id);
+  if (idx >= 0) playIndex(idx);
+}
+function playIndex(idx) {
+  const song = SONGS[idx];
+  if (!song || !(song.audio || song.audioSrc)) return;
+  currentIndex = idx;
+  audio.src = song.audio || song.audioSrc;
+  document.getElementById('p-thumb').src = songCover(song);
+  document.getElementById('p-title').textContent = song.title;
+  document.getElementById('p-sub').textContent = `${song.artist || DATA.artist.name} • ${song.album || ''}`;
+  document.getElementById('player').classList.add('visible');
+  audio.play();
+  document.getElementById('p-playbtn').innerHTML = '&#10074;&#10074;';
+}
+function togglePlay() {
+  if (!audio.src) return playLatest();
+  if (audio.paused) { audio.play(); document.getElementById('p-playbtn').innerHTML='&#10074;&#10074;'; }
+  else { audio.pause(); document.getElementById('p-playbtn').innerHTML='&#9654;'; }
+}
+function nextTrack() { if (SONGS.length) playIndex((currentIndex + 1) % SONGS.length); }
+function prevTrack() { if (SONGS.length) playIndex((currentIndex - 1 + SONGS.length) % SONGS.length); }
+function seek(e) {
+  if (!audio.duration) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+}
+audio.addEventListener('timeupdate', () => {
+  const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+  document.getElementById('progress-fill').style.width = pct + '%';
 });
-document.getElementById('p-playbtn').textContent=playing?'Pause':'▶';
+audio.addEventListener('ended', nextTrack);
+document.getElementById('volume').addEventListener('input', e => audio.volume = e.target.value);
+function checkPhotoStrip() {
+  const strip = document.getElementById('photo-strip');
+  if ([...strip.querySelectorAll('img')].every(img => img.classList.contains('missing'))) strip.classList.add('empty');
 }
-function playById(id){
-const song=getSong(id); if(!song || !song.audio)return;
-if(cur===id){
- if(audio.paused){audio.play().catch(()=>{});setButtons(id,true)}
- else{audio.pause();setButtons(id,false)}
- return;
-}
-cur=id;
-audio.src=song.audio;
-document.getElementById('p-title').textContent=song.title;
-document.getElementById('p-sub').textContent=song.album || 'PULSE7';
-document.getElementById('p-thumb').src=song.cover;
-player.classList.add('visible');
-setButtons(id,true);
-audio.play().catch(()=>{});
-gtag('event','song_play',{artist:'PULSE7',song_title:song.title,album:song.album,player_type:'artist_site'});
-}
-function videoButton(song){
-if(song.videos && song.videos.length){
-return `<a class="video-btn" href="${song.videos[0].youtube}" target="_blank">Watch Video</a>`;
-}
-return `<span class="video-btn">Video Coming Soon</span>`;
-}
-function buildAlbums(){
-const albums=new Map();
-SONGS.forEach(s=>{if(!albums.has(s.album))albums.set(s.album,[]);albums.get(s.album).push(s)});
-const wrap=document.getElementById('albums');
-wrap.innerHTML='';
-albums.forEach((tracks,album)=>{
-const cover=tracks[0].albumCover || tracks[0].cover;
-const sec=document.createElement('section');
-sec.className='album-section';
-sec.innerHTML=`<div class="album-layout">
-<div><img class="album-cover" src="${cover}" alt="${album}"></div>
-<div>
-<div class="eyebrow">Album</div>
-<h2 class="album-title">${album}</h2>
-<div class="meta">PULSE7</div>
-<div class="tracklist">
-${tracks.map(t=>`<div class="track-row">
-<span class="track-num">${t.num||''}</span>
-<span class="track-title">${t.title}</span>
-${videoButton(t)}
-<button class="track-play" data-play-id="${t.id}" onclick="playById('${t.id}')">Play</button>
-</div>`).join('')}
-</div>
-<h3 class="album-tracks-title">Album Tracks</h3>
-<div class="cards">
-${tracks.map(t=>`<div class="song-card">
-<img src="${t.cover}" alt="${t.title}">
-<h4>${t.title}</h4>
-<p>${t.album}</p>
-${videoButton(t)}
-</div>`).join('')}
-</div>
-</div>
-</div>`;
-wrap.appendChild(sec);
-});
-}
-function updateLatest(song){
-if(!song)return;
-document.getElementById('latest-section-title').textContent=song.title;
-document.getElementById('latest-title').textContent=song.title;
-document.getElementById('latest-cover').src=song.cover;
-document.getElementById('latest-play-btn').onclick=()=>playById(song.id);
-document.getElementById('hero-play-btn').onclick=()=>playById(song.id);
-}
-async function init(){
-const res=await fetch('songs.json?cb='+Date.now());
-SONGS=await res.json();
-buildAlbums();
-updateLatest(SONGS.find(s=>s.isLatest)||SONGS[0]);
-}
-document.getElementById('p-playbtn').onclick=()=>{if(cur)playById(cur)};
-document.getElementById('p-close').onclick=()=>{audio.pause();player.classList.remove('visible');setButtons(cur,false);cur=null};
-audio.addEventListener('ended',()=>{const i=SONGS.findIndex(s=>s.id===cur);playById(SONGS[(i+1)%SONGS.length].id)});
-init();
+renderLatest();
+renderVideo();
+renderAlbums();
 </script>
 </body>
 </html>

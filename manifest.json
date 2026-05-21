@@ -1,21 +1,10 @@
 {
   "name": "PULSE7",
   "short_name": "PULSE7",
-  "description": "K-pop / electronic pop from Hello Texas Records",
+  "description": "PULSE7 on Hello Texas Records",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#020106",
-  "theme_color": "#FF2D78",
-  "icons": [
-    {
-      "src": "images/logos/pulse7-logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "images/logos/pulse7-logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "background_color": "#090806",
+  "theme_color": "#d49a25",
+  "icons": []
 }
