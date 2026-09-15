@@ -1,27 +1,7 @@
 [
   {
-    "id": "signallocked",
-    "num": "01",
-    "title": "Locked in the Lights",
-    "artist": "PULSE7",
-    "album": "Endless Echo",
-    "trackNumber": 1,
-    "albumOrder": 1,
-    "albumCover": "images/covers/pulse7-endless-echo-ALBUM-cover.png",
-    "type": "single",
-    "isLatest": false,
-    "cover": "images/covers/pulse7-signal-locked-cover.png",
-    "audio": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
-    "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
-    "videos": [],
-    "includeOnRadio": true,
-    "includeOnHomepage": false,
-    "explicit": false,
-    "tags": []
-  },
-  {
     "id": "twonights",
-    "num": "02",
+    "num": "01",
     "title": "Two Nights",
     "artist": "PULSE7",
     "album": "Endless Echo",
@@ -37,11 +17,12 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "wedontmiss",
-    "num": "03",
+    "num": "02",
     "title": "We Don't Miss",
     "artist": "PULSE7",
     "album": "Endless Echo",
@@ -57,6 +38,28 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
+  },
+  {
+    "id": "signallocked",
+    "num": "03",
+    "title": "Locked in the Lights",
+    "artist": "PULSE7",
+    "album": "Endless Echo",
+    "trackNumber": 3,
+    "albumOrder": 3,
+    "albumCover": "images/covers/pulse7-endless-echo-ALBUM-cover.png",
+    "type": "single",
+    "isLatest": false,
+    "cover": "images/covers/pulse7-signal-locked-cover.png",
+    "audio": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
+    "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
+    "videos": [],
+    "includeOnRadio": true,
+    "includeOnHomepage": false,
+    "explicit": false,
+    "tags": [],
+    "streaming": {}
   }
 ]

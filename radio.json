@@ -11,14 +11,6 @@
   },
   "tracks": [
     {
-      "title": "Signal Locked",
-      "artist": "PULSE7",
-      "album": "Endless Echo",
-      "cover": "images/covers/pulse7-signal-locked-cover.png",
-      "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
-      "videos": []
-    },
-    {
       "title": "Two Nights",
       "artist": "PULSE7",
       "album": "Endless Echo",
@@ -32,6 +24,14 @@
       "album": "Endless Echo",
       "cover": "images/covers/pulse7-we-dont-miss-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/ebabtss62r3ykf9p2f7s2/We-Don-t-Miss-Mastered-MP3.mp3?rlkey=b0vf9u40fw7guqel1c1ztu460&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Locked in the Lights",
+      "artist": "PULSE7",
+      "album": "Endless Echo",
+      "cover": "images/covers/pulse7-signal-locked-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/49isq5ehrm5fxftjgbbdt/PULSE7-Signal-Locked-Mastered-MP3.mp3?rlkey=ewxlecqcld0za18lgj3e4nylb&raw=1",
       "videos": []
     }
   ]
